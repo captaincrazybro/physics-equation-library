@@ -7,8 +7,7 @@ from equations import *
 
 def main():
     # Use a breakpoint in the code line below to debug your script.
-    dp = momentum_principle(Fnet=vec(1, 2, 3), dt=2)
-    print(f'Change in Momentum: {dp}')
+    print(momentum(p = vec(1, 5, 3.5), m = 5))
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
