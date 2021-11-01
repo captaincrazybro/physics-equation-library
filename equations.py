@@ -4,8 +4,11 @@ from utils import *
 from __future__ import division, print_function
 from math import *
 
-def momentum_principle(dp: vec, Fnet: vec, dt: float):
+def momentum_principle(**args):
     # dp = Fnet * dt
+    dp = args.get('dp')
+    Fnet = args.get('Fnet')
+    dt = args.get('dt')
 
     if dp is not None and Fnet is not None:
         return Divide(dp, Fnet)
@@ -16,8 +19,11 @@ def momentum_principle(dp: vec, Fnet: vec, dt: float):
     else:
         raise not_enough_params(2)
 
-def momentum_principle_scalar(dp, Fnet, dt: float):
-    #dp = Fnet * dt
+def momentum_principle_scalar(**args):
+    # dp = Fnet * dt
+    dp = args.get('dp')
+    Fnet = args.get('Fnet')
+    dt = args.get('dt')
 
     if dp is not None and Fnet is not None:
         return dp/Fnet
@@ -28,8 +34,11 @@ def momentum_principle_scalar(dp, Fnet, dt: float):
     else:
         raise not_enough_params(2)
 
-def vector_update(f: vec, i: vec, delta: vec, dt: float):
+def vector_update(**args):
     # vf = vi + a * dt
+    f = args.get('f')
+    Fnet = args.get('Fnet')
+    dt = args.get('dt')
 
     if i is not None and f is not None and delta is not None:
         return Divide(f - i, delta)
