@@ -1,5 +1,4 @@
 from equations import *
-
 # This is a sample Python script.
 
 # Press Shift+F10 to execute it or replace it with your code.
@@ -8,7 +7,8 @@ from equations import *
 
 def main():
     # Use a breakpoint in the code line below to debug your script.
-    position_update_force(rf=vec(1, 2, 3), )
+    dp = momentum_principle(Fnet=vec(1, 2, 3), dt=2)
+    print(f'Change in Momentum: {dp}')
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
