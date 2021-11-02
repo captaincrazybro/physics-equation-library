@@ -128,3 +128,30 @@ def position_update(rf: float = None, ri: float = None, v: float = None, dt: flo
         ]
     else:
         raise not_enough_params(4)
+
+def y(y: float = None, v: vec = None):
+    c = 299792458
+
+    if v is not None:
+        return 1/sqrt(1 - (mag(v)/c)**2)
+    else:
+        return sqrt(1 - (1/y**2)) * c
+
+def y(y: float = None, v: float = None):
+    c = 299792458
+
+    if v is not None:
+        return 1/sqrt(1 - (mag(v)/c)**2)
+    else:
+        return sqrt(1 - (1/y**2)) * c
+
+def gamma_momentum_principle(p: vec = None, y: float = None, m: float = None, v: vec = None):
+
+    if y is not None and m is not None and v is not None:
+        return y * m * v
+    elif m is not None and v is not None:
+        c = 299792458
+        y = y(v=v)
+
+        return y * m * v
+    elif
