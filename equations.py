@@ -134,16 +134,21 @@ def y(y: float = None, v: vec = None):
 
     if v is not None:
         return 1/sqrt(1 - (mag(v)/c)**2)
-    else:
+    elif y is not None:
         return sqrt(1 - (1/y**2)) * c
+    else:
+        raise not_enough_params(1)
 
 def y(y: float = None, v: float = None):
     c = 299792458
 
     if v is not None:
         return 1/sqrt(1 - (mag(v)/c)**2)
+    elif y is not None:
+        return sqrt(1 - (1 / y ** 2)) * c
     else:
-        return sqrt(1 - (1/y**2)) * c
+        raise not_enough_params(1)
+
 
 def gamma_momentum_principle(p: vec = None, y: float = None, m: float = None, v: vec = None):
 
@@ -154,4 +159,9 @@ def gamma_momentum_principle(p: vec = None, y: float = None, m: float = None, v:
         y = y(v=v)
 
         return y * m * v
-    elif
+    elif p is not None and m is not None and y is not None:
+        return p/(m * y)
+    else:
+        raise NameError("Not enough parameters or invalid combination of parameters")
+
+def gamma_momentum_principle(p: float = None, y: float = None, m: float = None, v: float = None):
