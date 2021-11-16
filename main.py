@@ -8,8 +8,8 @@ from equations import *
 def main():
     # Use a breakpoint in the code line below to debug your script.
     eqs = Equations(accuracy=Accuracy.HIGH)
-    print(eqs.position_update(rf=3, ri=0, v=3, a=1.5))
-    print(eqs.position_update(ri=0, v=3, dt=0.0, a=1.5))
+    s = eqs.position_update(rf=3, ri=0, v=3, a=1.5)
+    print(s/2)
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
