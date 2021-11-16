@@ -39,7 +39,7 @@ class Equations:
             raise not_enough_params(2)
 
 
-    def pdate(self, f: vec = None, i: vec = None, delta: vec = None, dt: float = None):
+    def update(self, f: vec = None, i: vec = None, delta: vec = None, dt: float = None):
         # vf = vi + a * dt
 
         if i is not None and f is not None and delta is not None:
@@ -249,4 +249,3 @@ class Equations:
             return Fspring/s
         else:
             raise not_enough_params(2)
-
