@@ -223,3 +223,30 @@ class Equations:
             return Fgrav * r**2/m2
         else:
             raise not_enough_params(3)
+
+    def spring_force(self, Fspring: vec = None, k: float = None, s: float = None, rHat: vec = None):
+        # Fspring = -k * s * rHat
+
+        if k is not None and s is not None and rHat is not None:
+            return -k * s * rHat
+        elif Fspring is not None and k is not None and rHat is not None:
+            raise cannot_divide_vectors()
+        elif Fspring is not None and k is not None and s is not None:
+            return Fspring/(-k * s)
+        elif Fspring is not None and s is not None and rHat is not None:
+            raise cannot_divide_vectors()
+        else:
+            raise not_enough_params(3)
+
+    def spring_force(self, Fspring: float = None, k: float = None, s: float = None):
+        # Fspring = -k * s
+
+        if k is not None and s is not None:
+            return -k * s
+        elif Fspring is not None and k is not None:
+            return Fspring/k
+        elif Fspring is not None and s is not None:
+            return Fspring/s
+        else:
+            raise not_enough_params(2)
+
